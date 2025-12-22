@@ -44,7 +44,7 @@
   "workspaces": [
     "apps/*",
     "modules/*",
-    "packages/*"
+    "libs/*"
   ],
   "trustedDependencies": [
     "@swc/core",
