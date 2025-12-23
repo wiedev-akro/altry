@@ -1,0 +1,38 @@
+name: altry
+
+services:
+  postgres:
+    container_name: altry-postgres
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DATABASE=${DATABASE_NAME}
+    ports:
+      - ${DATABASE_PORT}:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    networks:
+      - altry
+  redis:
+    container_name: altry-redis
+    image: redis:latest
+    restart: always
+    ports:
+      - ${REDIS_PORT}:6379
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/var/lib/redis/data
+    networks:
+      - altry
+
+volumes:
+  postgres_data:
+    name: altry-postgres-data
+  redis_data:
+    name: altry-redis-data
+
+networks:
+  altry:
+    name: altry

@@ -8,6 +8,15 @@ out-tsc
 # dependencies
 node_modules
 
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
 # IDEs and editors
 /.idea
 .project
@@ -24,6 +33,13 @@ node_modules
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
 # misc
 /.sass-cache
 /connect.lock
@@ -38,7 +54,25 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# temp directory
+.temp
+.tmp
+/temp
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Nx
 .nx/cache
 .nx/workspace-data
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
+
+# Test
+test-output

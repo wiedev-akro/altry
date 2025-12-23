@@ -1,9 +1,18 @@
 {
   "files.exclude": {
     "**/.nx": true,
-    "**/node_modules": true
+    "**/node_modules": true,
+    "**/dist": true
   },
   "npm.packageManager": "bun",
   "npm.scriptRunner": "bun",
-  "cSpell.words": ["altry", "trivago"]
+  "cSpell.words": [
+    "altry",
+    "COEP",
+    "mikro",
+    "requirepass",
+    "songkeys",
+    "trivago",
+    "unrs"
+  ]
 }
