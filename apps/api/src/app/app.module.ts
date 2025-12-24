@@ -62,7 +62,7 @@ import { ThrottlerGuard } from '../guards'
         const appConfig = configService.getOrThrow<AppConfigType>('app')
 
         return {
-          autoSchemaFile: appConfig.isProduction ? true : 'schema.gql',
+          autoSchemaFile: appConfig.isProduction ? false : 'schema.gql',
           sortSchema: false,
           subscription: true,
           graphiql: !appConfig.isProduction,

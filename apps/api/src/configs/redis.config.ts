@@ -7,7 +7,7 @@ export const redisSchema = z.object({
     .preprocess(v => (typeof v === 'string' ? parseInt(v, 10) : v), z.number())
     .default(6379),
   namespace: z.string().default('default'),
-  user: z.string().optional().default('default'),
+  user: z.string().default('default'),
   password: z.string()
 })
 

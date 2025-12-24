@@ -19,9 +19,10 @@ async function bootstrap() {
   } catch (error) {
     Logger.error('Migration failed', error)
     process.exit(1)
+  } finally {
+    await orm.close()
+    process.exit(0)
   }
-
-  process.exit(0)
 }
 
 bootstrap().catch(err => {
